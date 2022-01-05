@@ -14,6 +14,10 @@ function sendNotification(title,body,image) { // funcion para crear el cuerpo de
 function sendId() {// funcion que manda la notificacion
 
     let id = document.getElementById("notificar").value;
+
+    if (id === "") {
+        return alert ("debe ingresar un numero");
+    }
     console.log("id por input",id)
 
     fetch('https://rickandmortyapi.com/api/character/'+id)// se conultan los datos a la API
